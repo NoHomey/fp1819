@@ -17,8 +17,6 @@
 (define (contains-the-root? start end function)
   (<= (* (function start) (function end)) 0))
 
-
-;; TODO: can this be simplified?
 (define (find-root function)
   (define (helper start end function)
     (let
