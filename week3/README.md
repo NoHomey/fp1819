@@ -1,15 +1,10 @@
 # Week 3
 
-- let и let*
-- функции от по-висок ред
-- sum, product, accumulate
-- lambda функции
-
 ## let и let*
 
 ```scheme
 (define (lo6o a b)
-    (+ 
+    (+
         (- (* 3 a) b)
         (+ (* 3 a) b)))
 ```
@@ -18,7 +13,7 @@
 
 ```scheme
 (define (less-lo6o a b)
-    (let 
+    (let
         ((triple-a (* 3 a)))
     (+
         (- triple-a b)
@@ -28,9 +23,9 @@
 ### let  
 -  използва се често за опростяване на израз, който съдържа 2 (или повече) еднакви подизраза
 - синтаксис  
-    
+
     ```scheme
-    (let 
+    (let
         ((variable1 value1)
          (variable2 value2)
          ;; ...
@@ -39,7 +34,7 @@
     ```
 
 - първо се изчисляват всички value изрази и след това се свързват с променливите си variable
-    
+
     ```scheme
     ;; връща 3
     (let
@@ -62,20 +57,20 @@
     ;; понеже изразите на първо място в скобите при прилагане на функции  
     ;; (примерно плюсът в (+ 2 3)) се оценяват по същия начин като всички  
     ;; останали изрази, можем и тях да свързваме с променлива в let израз
-    (let 
+    (let
         ((+ *))
     (+ 2 3))        ;; в тялото на let - връща 6
-    
+
     (+ 2 3)         ;; връща 5
     ```
 - възможно е да имаме вложени let-изрази
-    
+
     ```scheme
     ;; връща 35
     ;; стойността на x в тялото на вътрешния let "засенчва" (? shadows)  
     ;; тази от външния let-израз
-    (let 
-        ((x 2) 
+    (let
+        ((x 2)
          (y 3))
     (let                    ;; втори let, вложен в тялото на първия
         ((x 7)
@@ -86,9 +81,9 @@
 
 ### let*  
 - синтаксис - същия като на let-изразите
-    
+
     ```scheme
-    (let* 
+    (let*
         ((variable1 value1)
          (variable2 value2)
          ;; ...
@@ -119,7 +114,7 @@
 ## Функции от по-висок ред
 
 - функциите в Scheme са "first-class citizens" - т.е. те са стойности, които могат да бъдат подавани наоколо, подобно на всички останали стойности (числа, списъци)
- 
+
 - функция от по-висок ред - приема функция като аргумент и/или връща функция като резултат
 
     ```scheme
@@ -138,7 +133,7 @@
 
     ```scheme
     ;; помощна функция, игнорираме я
-    (define (cube x) 
+    (define (cube x)
         (* x x x))
 
     ;; функция, която намира сумата на числата в даден интервал [a, b]
@@ -170,7 +165,7 @@
     (define (sum a b term next)
         (if (> a b)
             0
-            (+ 
+            (+
                 (term a)
                 (sum (next a) b term next))))
 
@@ -198,7 +193,7 @@
 (define (sum a b term next)
     (if (> a b)
         0
-        (+ 
+        (+
             (term a)
             (sum (next a) b term next))))
 
@@ -208,7 +203,7 @@
         (*
             (term a)
             (product (next a) b term next))))
-            
+
 ;; връща произведението на числата в интервала [a, b]
 (define (product-interval a b)    
     (product a b identity succ))
@@ -225,8 +220,8 @@
 (define (accumulate operation base start end term next)
   (if (> start end)
       base
-      (operation 
-            (term start) 
+      (operation
+            (term start)
             (accumulate operation base (next start) end term next))))
 
 (define (sum-interval a b)
@@ -242,9 +237,9 @@
 На няколко места по-горе дефинирахме помощни функции, които после подадохме на accumulate и повече никога не използвахме (примерно, `identity`, `succ`, `cube`, `skip-one`). В подобни случаи можем да използваме анонимни (lambda) функции.
 
 - синтаксис
-    
+
     ```scheme
-    (lambda (arg1 arg2 ... argn) 
+    (lambda (arg1 arg2 ... argn)
         body)
     ```
 
@@ -277,22 +272,22 @@
         (+ n 1))
 
     (define succ
-        (lambda (n) 
+        (lambda (n)
             (+ n 1)))
     ```
 
 ## Задачи
 
 1. Дефинирайте функция `(apply-twice f arg)`, която прилага функцията f два пъти  
-пример: 
-    
+пример:
+
     ```scheme
     (apply-twice sqrt 16) ;; връща 2
     ```
 
 2. Дефинирайте функция `(apply-n number f arg)`, която прилага функцията f n пъти
-пример: 
-    
+пример:
+
     ```scheme
     (apply-n 3 sqrt 256) ;; връща 2
     ```

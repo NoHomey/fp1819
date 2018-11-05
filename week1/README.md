@@ -1,12 +1,5 @@
 # Week 1
 
-## Съдържание
-
-- [DrRacket](#dr-racket)
-- [Синтаксис](#синтаксис)
-- [Примери](#примери)
-- [Задачи](#задачи)
-
 ## DrRacket
 
 - [Racket (PLT Scheme)](https://docs.racket-lang.org/guide/intro.html) vs [R5RS](https://docs.racket-lang.org/r5rs/r5rs-std/r5rs-Z-H-2.html#%_toc_start) vs R6RS
@@ -18,10 +11,10 @@
     + [repl.it](https://repl.it/)
     + текстов редактор по избор + зареждане на програмата чрез racket, mzscheme, друго
     + emacs
- 
+
 ## Синтаксис
 
-- TODO: шега за скоби 
+- TODO: шега за скоби
 
 - [индентация](http://community.schemewiki.org/?scheme-style)
 
@@ -33,13 +26,13 @@
     + boolean - #t, #f
         * всички стойности, различни от #f, се приемат за истина
         * разни функции - `boolean?`,  `and`, `or`, `not`
-    
-    + number - integer, rational (eg 22/7), real (eg 3.14), complex (eg 2+3i) 
+
+    + number - integer, rational (eg 22/7), real (eg 3.14), complex (eg 2+3i)
         * разни функции - `integer?`, `rational?`, `real?`, `complex?`, `=`, `>`, `>=`, `<`, `<=`, `+`, `-`, `*`, `/`, `remainder` (`mod` в REPL.it), `quotient` (`div` в REPL.it), `abs`, `expt`, `sqrt`, `min`, `max`, `round`
-    
+
     + character - префиксва се с #\
         * разни функции - `char?`
-    
+
     + string - между двойни кавички
         * разни функции - `string?`, `substring`, `string-append`
 
@@ -50,26 +43,26 @@
 
 - дефиниции
     + дефиниране на израз
-    
+
         `(define symbol expression)`
     + дефиниране на функция  
-        
+
         `(define (function-name parameters) body)`
 
 - условни изрази
     + if израз
-        
+
         ```scheme
         (if predicate
-            consequent 
+            consequent
             alternative)
         ```
     + cond израз
 
       ```scheme
-      (cond 
-          (pred1 expr1) 
-          (pred2 expr2) 
+      (cond
+          (pred1 expr1)
+          (pred2 expr2)
           (else expr3))
       ```
 
