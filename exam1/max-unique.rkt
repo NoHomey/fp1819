@@ -16,16 +16,12 @@
   (filter unique? list))
 
 (define (maximum list)
-  (foldr
-      (lambda (curr accum)
-          (if (> curr accum)
-              curr
-              accum))
+  (foldl
+      min
       (car list)
       (cdr list)))
 
 (define (max-unique ll)
-  ;; TODO: is it ok to flatten the unique lists?
   (let ((unique-numbers (flatten (map get-uniques ll))))
     (if (null? unique-numbers)
         #f
