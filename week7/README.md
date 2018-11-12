@@ -68,7 +68,7 @@
 (apply - '(1 2 3))  ;; връща -4
 ```
 
-## [`eval`](http://www.dave-reed.com/Scheme/r5rs_64.html)
+## `eval`
 
 `(eval expression environment)`
 
@@ -134,27 +134,70 @@
 
 ## Задачи
 
-Бележка: `tree` е двоично дърво
+```scheme
+(define tree '(1
+                 (2 () ())
+                 (3
+                     (4 () ())
+                     (5 () ()))))
+
+(define binary-search-tree '(3
+                              (1
+                                  ()
+                                  (2 () ()))
+                              (4
+                                  ()
+                                  (5 () ()))))
+```
+
 
 1. (Анди) Дефинирайте функция `(sum tree)`, която намира сумата на всички елементи на дървото `tree`
 
+  ```scheme
+  (sum tree)    ;; връща 15
+  ```
+
 2. Дефинирайте функция `(map-tree function tree)`
+
+  ```scheme
+  (map (lambda (x) (+ x 1)) tree)    
+  ;; връща '(2
+  ;;           (3 () ())
+  ;;           (4
+  ;;               (5 () ())
+  ;;               (6 () ())))
+  ```
 
 3. Дефинирайте функция `(level tree i)`, която връща списък от стойностите на възлите, намиращи се на дълбочина i от корена
 
-4. Дефинирайте функции `(inorder tree)`, `(preorder tree)` и `(postorder tree)`, които връщат списък от всички елементи на `tree`, получени при съответното обхождане
+4. Дефинирайте функции `(inorder tree)`, `(preorder tree)` и `(postorder tree)`, които връщат списък от всички елементи на `tree`, получени при съответното обхождане  
 
-  Бележка:  
-  inorder - left, root, right  
-  preorder - root, left, right  
-  postorder - left, right, root
+  ```scheme
+  ;; inorder - left, root, right  
+  (inorder tree)    ;; връща '(2 1 4 3 5)
+
+  ;; preorder - root, left, right
+  (preorder tree)   ;; връща '(1 2 3 4 5)
+
+  ;; postorder - left, right, root
+  (postorder tree)  ;; връща '(2 4 5 3 1)
+  ```
 
 5. (Анди) Дефинирайте функция `(binary-search-tree? tree)`, която проверява дали дървото tree е наредено
-6. Дефинирайте функция `(construct-binary-search-tree sorted-list)`, която по даден сортиран списък конструира двоично наредено дърво
 
-  Бележка:  
-  Дефинирайте помощна функция `(insert binary-search-tree element)`, която  вмъква `element` на подходящото място в двоично наредено дърво
+  ```scheme
+  (binary-search-tree? tree)                  ;; връща #f
+  (binary-search-tree? binary-search-tree)    ;; връща #t
+  ```
+
+6. Дефинирайте функция `(construct-binary-search-tree sorted-list)`, която по даден сортиран списък конструира двоично наредено дърво.  
+Дефинирайте помощна функция `(insert binary-search-tree element)`,която  вмъква `element` на подходящото място в двоично наредено дърво
 
 7. Дефинирайте фунцкия `(contains? tree path)`, която проверява дали даден път `path` - списък от стойности, се съдържа в `tree`
+
+  ```scheme
+  (contains? tree '(1 3 5))   ;; връща #t
+  (contains? tree '(1 2 4))   ;; връща #f
+  ```
 
 8. Дефинирайте функция `(symmetric? tree)`, която проверява дали дадено дърво е симетрично (разглеждаме само структурата му, не и стойностите във възлите му)

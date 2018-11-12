@@ -30,7 +30,7 @@ Materials for the Functional Programming course 2018-2019
   - матрици
   - [подготовка за контролно](https://github.com/ekaranasuf/fp1819/tree/master/exam1)
 
-[Week 7](https://github.com/ekaranasuf/fp1819/tree/master/week8)
+[Week 7](https://github.com/ekaranasuf/fp1819/tree/master/week7)
   - функции с произволен брой аргументи
   - `map` с произволен брой аргументи, `аpply` и `eval`
   - двоични дървета
