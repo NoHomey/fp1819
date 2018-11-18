@@ -92,11 +92,12 @@
 `(root left-tree right-tree)`
 
 ```scheme
-(define tree (1
-                (2 () ())
-                (3
-                    (4 () ())
-                    (5 () ()))))
+(define example-tree
+  '(1
+      (2 () ())
+      (3
+          (4 () ())
+          (5 () ()))))
 ```
 
 Базови операции (от лекции):
@@ -118,36 +119,24 @@
 
 ```
 
-## Асоциативни списъци
-
-Асоциативните списъци са списъци от наредени `(key . value)` двойки.
-
-```scheme
-(define assoc-list '((a . 10) (b . 12) (c . 18)))
-
-;; аssoc приема стойност и асоциативен списък
-;; връща първата (key . value) двойка, за която стойността е равна на key
-;; ако няма такава, връща #f
-(assoc 'a assoc-list)   ;; връща '(a . 10)
-(assoc 'd assoc-list)   ;; връща #f
-```
-
 ## Задачи
 
 ```scheme
-(define tree '(1
-                 (2 () ())
-                 (3
-                     (4 () ())
-                     (5 () ()))))
+(define example-tree
+  '(1
+       (2 () ())
+       (3
+           (4 () ())
+           (5 () ()))))
 
-(define binary-search-tree '(3
-                              (1
-                                  ()
-                                  (2 () ()))
-                              (4
-                                  ()
-                                  (5 () ()))))
+(define example-binary-search-tree
+  '(3
+      (1
+          ()
+          (2 () ()))
+      (4
+          ()
+          (5 () ()))))
 ```
 
 1. Дефинирайте функция `plus`, която приема произволен брой аргументи и ги сумира
@@ -155,13 +144,13 @@
 1. (Анди) Дефинирайте функция `(sum tree)`, която намира сумата на всички елементи на дървото `tree`
 
   ```scheme
-  (sum tree)    ;; връща 15
+  (sum example-tree)    ;; връща 15
   ```
 
 2. Дефинирайте функция `(map-tree function tree)`
 
   ```scheme
-  (map (lambda (x) (+ x 1)) tree)    
+  (map (lambda (x) (+ x 1)) example-tree)    
   ;; връща '(2
   ;;           (3 () ())
   ;;           (4
@@ -175,20 +164,20 @@
 
   ```scheme
   ;; inorder - left, root, right  
-  (inorder tree)    ;; връща '(2 1 4 3 5)
+  (inorder example-tree)    ;; връща '(2 1 4 3 5)
 
   ;; preorder - root, left, right
-  (preorder tree)   ;; връща '(1 2 3 4 5)
+  (preorder example-tree)   ;; връща '(1 2 3 4 5)
 
   ;; postorder - left, right, root
-  (postorder tree)  ;; връща '(2 4 5 3 1)
+  (postorder example-tree)  ;; връща '(2 4 5 3 1)
   ```
 
 5. (Анди) Дефинирайте функция `(binary-search-tree? tree)`, която проверява дали дървото tree е наредено
 
   ```scheme
-  (binary-search-tree? tree)                  ;; връща #f
-  (binary-search-tree? binary-search-tree)    ;; връща #t
+  (binary-search-tree? example-tree)                  ;; връща #f
+  (binary-search-tree? example-binary-search-tree)    ;; връща #t
   ```
 
 6. Дефинирайте функция `(construct-binary-search-tree sorted-list)`, която по даден сортиран списък конструира двоично наредено дърво.  
@@ -197,10 +186,28 @@
 7. Дефинирайте фунцкия `(contains? tree path)`, която проверява дали даден път `path` - списък от стойности, се съдържа в `tree`
 
   ```scheme
-  (contains? tree '(1 3 5))   ;; връща #t
-  (contains? tree '(1 2 4))   ;; връща #f
+  (contains? example-tree '(1 3 5))   ;; връща #t
+  (contains? example-tree '(1 2 4))   ;; връща #f
   ```
 
 8. Дефинирайте функция `(symmetric? tree)`, която проверява дали дадено дърво е симетрично (разглеждаме само структурата му, не и стойностите във възлите му)
 
-9. Дефинирайте функция `(paths tree), която намира всички пътища в `tree`
+  ```scheme
+  (define example-symmetric-tree
+    '(1
+        (2
+            ())
+            (4 () ())
+        (3
+            (5 () ())
+            ())))
+
+  (symmetric? example-tree)             ;; връща #f
+  (symmetric? example-symmetric-tree)   ;; връща #t
+  ```
+
+9. Дефинирайте функция `(paths tree)`, която намира всички пътища в `tree`
+
+  ```scheme
+  (paths example-tree)     ;; връща '((1 2) (1 3 4) (1 3 5))
+  ```
