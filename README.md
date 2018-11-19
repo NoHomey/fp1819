@@ -38,4 +38,4 @@ Materials for the Functional Programming course 2018-2019
 [Week 8](https://github.com/ekaranasuf/fp1819/tree/master/week8)
   - асоциативни списъци
   - графи
-  - дървета
+  - deplay, force, потоци
