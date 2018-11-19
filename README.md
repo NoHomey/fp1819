@@ -34,3 +34,8 @@ Materials for the Functional Programming course 2018-2019
   - функции с произволен брой аргументи
   - `map` с произволен брой аргументи, `аpply` и `eval`
   - двоични дървета
+
+[Week 8](https://github.com/ekaranasuf/fp1819/tree/master/week8)
+  - асоциативни списъци
+  - графи
+  - дървета
