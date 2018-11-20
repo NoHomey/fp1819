@@ -43,4 +43,4 @@ Materials for the Functional Programming course 2018-2019
 [Week 9](https://github.com/ekaranasuf/fp1819/tree/master/week9)
   - [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
   - [haskell компилатор](https://www.haskell.org/platform/)
-  - синтаксис - прости типове данни, дефиниции, прилагане на функции, currying, условни изрази
+  - синтаксис - типове данни, дефиниции, прилагане на функции, currying, pattern matching, гардове, условни изрази, `let` и `where`
