@@ -1,12 +1,13 @@
 # Functional Programming
-Materials for the Functional Programming course 2018-2019
+
+Materials for the Functional Programming course in FMI 2018-2019
 
 [Week 1](https://github.com/ekaranasuf/fp1819/tree/master/week1)
   - DrRacket
   - синтаксис - прости типове данни, дефиниции, прилагане на функции, условни изрази
 
 [Week 2](https://github.com/ekaranasuf/fp1819/tree/master/week2)
-  - рекурсивен vs Итеративен подход при решаването на задачи
+  - рекурсивен vs итеративен подход при решаването на задачи
 
 [Week 3](https://github.com/ekaranasuf/fp1819/tree/master/week3)
   - `let` и `let*`
@@ -44,3 +45,10 @@ Materials for the Functional Programming course 2018-2019
   - [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
   - [haskell компилатор](https://www.haskell.org/platform/)
   - синтаксис - типове данни, дефиниции, прилагане на функции, currying, pattern matching, гардове, условни изрази, `let` и `where`
+
+[Week 10](https://github.com/ekaranasuf/fp1819/tree/master/week10)
+  - частично прилагане на функции
+  - функции от по-висок ред
+  - lambda функции
+  - обхождане на списъци
+  - вградени функции за списъци
