@@ -52,3 +52,6 @@ Materials for the Functional Programming course in FMI 2018-2019
   - lambda функции
   - обхождане на списъци
   - вградени функции за списъци
+
+[Week 11](https://github.com/ekaranasuf/fp1819/tree/master/week11)
+- [подготовка за контролно](https://github.com/ekaranasuf/fp1819/tree/master/exam2)
