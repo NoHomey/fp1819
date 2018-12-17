@@ -53,5 +53,13 @@ Materials for the Functional Programming course in FMI 2018-2019
   - обхождане на списъци
   - вградени функции за списъци
 
-[Week 11](https://github.com/ekaranasuf/fp1819/tree/master/week11)
+Week 11
 - [подготовка за контролно](https://github.com/ekaranasuf/fp1819/tree/master/exam2)
+
+[Week 12](https://github.com/ekaranasuf/fp1819/tree/master/week12)
+  - потоци
+  - безточково програмиране
+  - класове от типове
+  - синоним на тип
+  - потребителски дефинирани типове
+  - `Maybe`, `Either`
