@@ -63,3 +63,8 @@ Week 11
   - синоним на тип
   - потребителски дефинирани типове
   - `Maybe`, `Either`
+
+[Week 13](https://github.com/ekaranasuf/fp1819/tree/master/week13)
+  - рекурсивни типове - двоични дървета
+  - `main` функция и `IO`
+  - модули
