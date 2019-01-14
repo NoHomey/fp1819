@@ -68,3 +68,6 @@ Week 11
   - рекурсивни типове - двоични дървета
   - `main` функция и `IO`
   - модули
+
+Week 14
+  - [подготовка за изпит](https://github.com/ekaranasuf/fp1819/tree/master/exam3)
